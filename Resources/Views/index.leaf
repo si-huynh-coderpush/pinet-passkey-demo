@@ -1,0 +1,58 @@
+#extend("base"):
+  #export("body"):
+    <div class="flex flex-col justify-center gap-10">
+      <div>
+        <img class="mx-auto h-20 w-auto" src="/images/pinet_logo.svg" alt="Vapor logo">
+        <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">PINET Passkey Demo</h2>
+      </div>
+
+      <div>
+        <form id="signInForm" class="space-y-6">
+          <div>
+            <div class="flex flex-col gap-2 items-center">
+            <p id="authenticateError" class="text-red-600 text-sm hidden">Error</p>
+              <button type="submit" class="btn-primary">
+                <img src="/images/person.badge.key.fill.svg" alt="passkey icon"/>
+                Sign in with Passkey
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+      <div class="flex flex-col justify-center gap-5">
+        <hr class="border-gray-400" />
+
+        <p class="text-center font-medium text-gray-600">
+          Don't have an account yet?
+        </p>
+
+
+        <div>
+          <form class="space-y-6" id="createAccountForm">
+            <div>
+              <label for="name" class="block font-medium leading-6 text-gray-600">Username</label>
+              <div class="mt-2">
+                <input id="username" name="username" type="text" placeholder="pinet-username" autocomplete="username webauthn" required class="block w-full rounded-lg border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-800">
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2 items-center">
+              <p class="text-center text-sm font-medium text-gray-600">Note: Your demo account will be deleted after 2 hours.</p>
+              <p id="createAccountError" class="text-red-600 text-sm hidden">Error</p>
+              <button type="submit" class="btn-primary">
+                Create account
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="application/javascript" src="/scripts/base64.js"></script>
+    <script type="application/javascript" src="/scripts/utils.js"></script>
+    <script type="application/javascript" src="/scripts/signIn.js"></script>
+    <script type="application/javascript" src="/scripts/createAccount.js"></script>
+  #endexport
+#endextend
